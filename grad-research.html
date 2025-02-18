@@ -8,56 +8,80 @@
     <style>
         body {
             font-family: "Times New Roman", sans-serif;
-            background-color: #ffffff;
+            background-color: #d4edda;
             margin: 0;
             padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px;
+            width: 85%;
             text-align: center;
         }
         h2, h3 {
             color: #333;
-            text-align: center;
         }
         p {
-            line-height: 1.6;
+            font-size: 18px;
+            color: #555;
         }
         .highlight {
             font-weight: bold;
             color: #0056b3;
         }
         .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
             text-align: center;
             padding: 15px;
-            background: #333;
-            color: white;
-            margin-top: 20px;
-            width: 100%;
+            font-size: 14px;
         }
         ul {
             text-align: left;
             display: inline-block;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+        .back-button {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+        }
+        .back-button a {
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-weight: bold;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
 
-    <div class="top-left">
-    <a href="index.html" class="btn btn-primary">← Back to Main Page</a>
-</div>
+    <div class="back-button">
+        <a href="index.html">← Back to Main Page</a>
+    </div>
 
+    <div class="container">
         <h2>Graduate Research Assistant</h2>
         <p><span class="highlight">Food and Agriculture Sustainable Supply and Transportation Lab, USA</span> | Aug 2024 - Present</p>
+        <img src="https://i.imgur.com/sPfZrUK.jpeg" alt="Graduate Research Assistant" class="img-fluid" style="max-width: 80%; border-radius: 15px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); display: block; margin: auto;">
+        <h3>Key Tasks and Responsibilities:</h3>
         <ul>
-            <li>Optimized supply chain efficiency by reducing stockouts by 15-20% in Community Gardens of Tarrant County through demand forecasting and backorder analysis.</li>
-            <li>Enhanced transportation efficiency by 25% using linear programming and simulation modeling (ARENA, Excel VBA Macros).</li>
-            <li>Implemented Statistical Process Control (SPC) techniques, including X-bar & R charts, to improve quality management and process stability.</li>
-            <li>Developed expertise in Agent-Based Modeling using NetLogo and sustainable logistics.</li>
-            <li>Leveraged Excel, Python, R, and Power BI for data analysis, visualization, and decision-making.</li>
+            <li>📌 Optimized supply chain efficiency by reducing stockouts by <strong>15-20%</strong> in Community Gardens of Tarrant County through demand forecasting and backorder analysis.</li>
+            <li>📈 Enhanced transportation efficiency by <strong>25%</strong> using linear programming and simulation modeling (<strong>ARENA, Excel VBA Macros</strong>).</li>
+            <li>📊 Implemented <strong>Statistical Process Control (SPC)</strong> techniques, including X-bar & R charts, to improve quality management and process stability.</li>
+            <li>📚 Developed expertise in <strong>Agent-Based Modeling</strong> using NetLogo and sustainable logistics.</li>
+            <li>🖥️ Leveraged <strong>Excel, Python, R, and Power BI</strong> for data analysis, visualization, and decision-making.</li>
         </ul>
     </div>
 
