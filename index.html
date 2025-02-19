@@ -53,7 +53,7 @@
         <div class="header text-center">
             <img src="https://i.imgur.com/GPOPLD9.jpeg" alt="Kushi Athma" class="rounded-circle" width="150">
             <h1 class="dancing-script">Kushi Deepak Athma</h1>
-            <p>Supply Chain & Logistics | Operations | Process Optimization</p>
+            <p id="dynamic-text"></p>
         </div>
     </div>
 
@@ -63,85 +63,133 @@
             <div class="col-md-8">
                 <div class="card p-4 shadow">
                     <h2 class="dancing-script">About Me</h2>
-                    <p>Master's in Industrial Engineering with expertise in Supply Chain | Data Analytics | Process Optimization. Passionate about improving efficiency using Lean Six Sigma and simulation modeling. Apart from studies I love crocheting and playing badminton. </p>
+                    <p>I hold a Master's in Industrial Engineering with expertise in Supply Chain, Operations, and Process Optimization. Passionate about enhancing efficiency through Lean Six Sigma and simulation modeling, I thrive on solving complex logistical challenges. Beyond my professional interests, I enjoy crocheting and playing badminton. </p>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        const positions = [
+            "Supply Chain & Logistics",
+            "Operations",
+            "Process Optimization"
+        ];
+
+        let positionIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const textElement = document.getElementById("dynamic-text");
+            let currentText = positions[positionIndex];
+            
+            if (isDeleting) {
+                charIndex--;
+            } else {
+                charIndex++;
+            }
+
+            textElement.innerHTML = currentText.substring(0, charIndex);
+
+            let speed = isDeleting ? 50 : 80; // Slightly faster typing speed
+
+            if (!isDeleting && charIndex === currentText.length) {
+                speed = 1000; // Shorter pause before deleting
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                positionIndex = (positionIndex + 1) % positions.length; // Move to next position
+                speed = 400; // Shorter pause before typing next
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+
+        document.addEventListener("DOMContentLoaded", typeEffect);
+    </script>
+
 
     <!-- Skills Section -->
-    <div class="container mt-4">
-        <h2 class="dancing-script">Skills</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card p-3 shadow">
-                    <h4>Supply Chain & Logistics</h4>
-                    <ul>
-                        <li>Inventory Management</li>
-                        <li>Demand Forecasting</li>
-                        <li>Supplier Negotiation</li>
-                    </ul>
-                </div>
+<!-- Skills Section -->
+<div class="container mt-4">
+    <h2 class="dancing-script fw-bold">Skills</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 justify-content-center">
+        <div class="col">
+            <div class="card p-3 shadow">
+                <h4 class="dancing-script fw-bold">Supply Chain & Logistics</h4>
+                <ul class="ps-3">
+                    <li>Inventory Management</li>
+                    <li>Demand Forecasting</li>
+                    <li>Supplier Negotiation</li>
+                </ul>
             </div>
-            <div class="col-md-4">
-                <div class="card p-3 shadow">
-                    <h4>Data Analytics & Visualization</h4>
-                    <ul>
-                        <li>Power BI, Tableau</li>
-                        <li>Python, SQL, Excel (Advanced)</li>
-                    </ul>
-                </div>
+        </div>
+        <div class="col">
+            <div class="card p-3 shadow">
+                <h4 class="dancing-script fw-bold">Data Analytics & Visualization</h4>
+                <ul class="ps-3">
+                    <li>Power BI, Tableau</li>
+                    <li>Python, SQL</li>
+                    <li>Excel (Advanced)</li>
+                </ul>
             </div>
-            <div class="col-md-4">
-                <div class="card p-3 shadow">
-                    <h4>Process Optimization</h4>
-                    <ul>
-                        <li>Lean Six Sigma, DMAIC</li>
-                        <li>Kaizen, 5S, Process Improvement</li>
-                    </ul>
-                </div>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <div class="card p-3 shadow" style="width: 18rem;">
+                <h4 class="dancing-script fw-bold">Process Optimization</h4>
+                <ul class="ps-3">
+                    <li>Lean Six Sigma, DMAIC</li>
+                    <li>Kaizen, 5S</li>
+                    <li>Process Improvement</li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
+
+
+
 
     <!-- Experience Section -->
-    <div id="Experience" class="container mt-4">
-        <h2 class="dancing-script">Experience</h2>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-                <a href="grad-research.html" class="text-decoration-none">
-                    <div class="card p-3 shadow">
-                        <h4>Graduate Research Assistant</h4>
-                        <p><strong>University of Texas at Arlington | Aug 2024 - Present</strong></p>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="grad-teaching.html" class="text-decoration-none">
-                    <div class="card p-3 shadow">
-                        <h4>Graduate Teaching Assistant</h4>
-                        <p><strong>University of Texas at Arlington | Aug 2024 - Jan 2025</strong></p>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="crm-intern.html" class="text-decoration-none">
-                    <div class="card p-3 shadow">
-                        <h4>CRM Intern</h4>
-                        <p><strong>BrandTouch & Analytics, ITC | Sep 2021 - Aug 2022</strong></p>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="supply-chain.html" class="text-decoration-none">
-                    <div class="card p-3 shadow">
-                        <h4>Supply Chain & Business Development Intern</h4>
-                        <p><strong>SOLRUF Enterprises, India | Aug 2022 - Dec 2022</strong></p>
-                    </div>
-                </a>
-            </div>
+<!-- Experience Section -->
+<div id="Experience" class="container mt-4">
+    <h2 class="dancing-script fw-bold">Experience</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+        <div class="col">
+            <a href="grad-research.html" class="text-decoration-none">
+                <div class="card p-3 shadow text-center">
+                    <h4 class="dancing-script fw-bold">Graduate Research Assistant</h4>
+                    <p>University of Texas at Arlington</p>  <p>Aug 2024 - Present</p>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="grad-teaching.html" class="text-decoration-none">
+                <div class="card p-3 shadow text-center">
+                    <h4 class="dancing-script fw-bold">Graduate Teaching Assistant</h4>
+                    <p>University of Texas at Arlington</p> <p>Aug 2024 - Jan 2025</p>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="crm-intern.html" class="text-decoration-none">
+                <div class="card p-3 shadow text-center">
+                    <h4 class="dancing-script fw-bold">Customer Relationship Management</h4>
+                    <p>BrandTouch & Analytics, ITC</p> <p>Sep 2021 - Aug 2022</p>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="supply-chain.html" class="text-decoration-none">
+                <div class="card p-3 shadow text-center">
+                    <h4 class="dancing-script fw-bold">Supply Chain & Business Development</h4>
+                    <p>SOLRUF Enterprises, India</p> <p>Aug 2022 - Dec 2022</p>
+                </div>
+            </a>
         </div>
     </div>
+</div>
+
 
     <!-- Footer -->
     <div class="footer">
