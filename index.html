@@ -106,6 +106,16 @@
         }
 
         document.addEventListener("DOMContentLoaded", typeEffect);
+        
+        document.addEventListener("DOMContentLoaded", function () {
+        if (sessionStorage.getItem("scrollPosition")) {
+            window.scrollTo(0, sessionStorage.getItem("scrollPosition"));
+        }
+
+        window.addEventListener("beforeunload", function () {
+            sessionStorage.setItem("scrollPosition", window.scrollY);
+        });
+    });
     </script>
 
 
@@ -153,37 +163,41 @@
     <!-- Experience Section -->
 <!-- Experience Section -->
 <div id="Experience" class="container mt-4">
-    <h2 class="dancing-script fw-bold">Experience</h2>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+    <h2 class="dancing-script fw-bold text-center">Experience</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         <div class="col">
             <a href="grad-research.html" class="text-decoration-none">
-                <div class="card p-3 shadow text-center">
+                <div class="card p-3 shadow h-100 text-center d-flex flex-column justify-content-center">
                     <h4 class="dancing-script fw-bold">Graduate Research Assistant</h4>
-                    <p>University of Texas at Arlington</p>  <p>Aug 2024 - Present</p>
+                    <p class="mb-1">University of Texas at Arlington</p>
+                    <p class="text-muted">Aug 2024 - Present</p>
                 </div>
             </a>
         </div>
         <div class="col">
             <a href="grad-teaching.html" class="text-decoration-none">
-                <div class="card p-3 shadow text-center">
+                <div class="card p-3 shadow h-100 text-center d-flex flex-column justify-content-center">
                     <h4 class="dancing-script fw-bold">Graduate Teaching Assistant</h4>
-                    <p>University of Texas at Arlington</p> <p>Aug 2024 - Jan 2025</p>
+                    <p class="mb-1">University of Texas at Arlington</p>
+                    <p class="text-muted">Aug 2024 - Jan 2025</p>
                 </div>
             </a>
         </div>
         <div class="col">
             <a href="crm-intern.html" class="text-decoration-none">
-                <div class="card p-3 shadow text-center">
+                <div class="card p-3 shadow h-100 text-center d-flex flex-column justify-content-center">
                     <h4 class="dancing-script fw-bold">Customer Relationship Management</h4>
-                    <p>BrandTouch & Analytics, ITC</p> <p>Sep 2021 - Aug 2022</p>
+                    <p class="mb-1">BrandTouch & Analytics, ITC</p>
+                    <p class="text-muted">Sep 2021 - Aug 2022</p>
                 </div>
             </a>
         </div>
         <div class="col">
             <a href="supply-chain.html" class="text-decoration-none">
-                <div class="card p-3 shadow text-center">
+                <div class="card p-3 shadow h-100 text-center d-flex flex-column justify-content-center">
                     <h4 class="dancing-script fw-bold">Supply Chain & Business Development</h4>
-                    <p>SOLRUF Enterprises, India</p> <p>Aug 2022 - Dec 2022</p>
+                    <p class="mb-1">SOLRUF Enterprises, India</p>
+                    <p class="text-muted">Aug 2022 - Dec 2022</p>
                 </div>
             </a>
         </div>
